@@ -1,0 +1,16 @@
+Copy ChatGPT prompt to clipboard
+  1 - create a 'Generate ChatGPT prompt' button
+  2 - forEach through vocabulary array, adding each word to a string list
+        called wordsKnown... (e.i. "{hola}, {adios}, {feliz}")
+  3 - prompt = `Can you tell me a story in spanish that uses
+        words both in and outside of my vocabulary? These are the 
+        words I know: {wordsKnown}`
+  4 - copy prompt to clipboard
+
+Filter new words before adding them to the vocabulary list
+  1 - filter through each character in the word, removing any
+        whitespace characters, symbols, and numbers
+  2 - if the final word = '', then don't add it to the vocabulary list
+  3 - forEach through current vocab - if the new word is already
+        in the vocab list, then don't add it
+  
