@@ -13,4 +13,35 @@ Filter new words before adding them to the vocabulary list
   2 - if the final word = '', then don't add it to the vocabulary list
   3 - forEach through current vocab - if the new word is already
         in the vocab list, then don't add it
+
+Add translations
+1 - store words as objects, with the word itself as the key, and
+      the translation as the value
+2 - when a new word is added to the vocabulary list, the value is
+      undefined, or set as a placeholer like ADD_TRANSLATION
+3 - when the vocabulary is rendered to the screen, the value can be
+      edited the same as the spanish words
+
+Add Review Page
+  Here you can take tests to solidify your knowledge of certain
+    translations.
+  Each answer either adds or subtracts points dependent on the user's
+    answer. The points are stored inside the word object.
+  Words to be reviewed are pulled from the vocab list at random, 
+    but have a greater chance of appearing the lower that word's
+    score is.
+
+Add Vocabulary Page
+  This is where all the words will be displayed, and can be edited or
+    deleted as desired.
+
+Add Expansion Page
+  This will be where the user inputs text to be added to their
+    vocabulary
+  The ChatGPT prompt option will be on this page as well
+  Anything submitted via the form will be displayed on the screen,
+    with any unknown words rendered as buttons that let you add
+    translations, and get added to the vocabulary list
+
+
   
