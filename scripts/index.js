@@ -31,10 +31,28 @@ function submitText() {
 function displayVocabulary()  {
   vocabularyHTML = '';
   vocabulary.forEach((word) => {
-    html = `<p>${word}</p>`;
+    html = `
+      <p>
+        ${word}
+        <button class="js-delete-button">
+          Delete
+        </button>
+      </p>
+    `;
     vocabularyHTML += html;
   })
   vocabularyDisplay.innerHTML = vocabularyHTML;
+
+  const deleteButtons = document.querySelectorAll('.js-delete-button');
+  deleteButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      vocabulary.splice(index, 1);
+
+      localStorage.setItem('vocabulary', JSON.stringify(vocabulary));
+      
+      displayVocabulary();
+    })
+  })
 }
 
 submitTextButton.addEventListener('click', submitText);
